@@ -18,26 +18,6 @@ bodies = {
 }
 base_url = 'http://goidirectory.gov.in'
 
-'''
-Disable this for now.
-#Right now we only care about Union Govt
-page = requests.get(bodies['Union Government'])
-
-#Fetch the categories eg. Apex Bodies, Committees etc.
-tree = html.fromstring(page.content)
-
-bodies = CSSSelector('h2.inner_blockhead > a')(tree)
-parsed_bodies = []
-re_get_args = re.compile("(?:'(.+?)'.*?)+")
-
-# Get the list of categories.
-for body in bodies:
-    p_body = {}
-    p_body['name'] = body.text_content()
-    cat_name_string = re_get_args.findall(body.attrib['href'])
-    p_body['cat_id'] = cat_name_string[0]
-    p_body['cat_name'] = cat_name_string[1]
-    parsed_bodies.append(p_body)'''
 
 '''
 Unfortunately had to gather manually.
