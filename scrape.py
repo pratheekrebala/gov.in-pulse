@@ -267,6 +267,6 @@ def get_everything():
     'commissions': get_organizations('E013'),
     'ministries': get_ministries()}
 
-fd = open('./goi_directory.json', 'w')
+fd = open('./data/goi_directory.json', 'w')
 fd.write(json.dumps(get_everything()))
 fd.close()
